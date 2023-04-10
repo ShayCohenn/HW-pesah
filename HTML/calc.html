@@ -10,7 +10,230 @@
 </head>
 
 <body>
-  
+  <div class="container">
+    <div class="screen">
+      <div class="opScreen" id="opScreen"></div>
+      <div class="resScreen" id="resScreen">0</div>
+    </div>
+    <div class="calculator">
+      <button onclick="btnClick()">x²</button>
+      <button onclick="btnClick()">log</button>
+      <button onclick="btnClick()">CE</button>
+      <button onclick="btnClick()">C</button>
+      <button onclick="btnClick()">←</button>
+      <button onclick="btnClick()">e</button>
+      <button onclick="btnClick()">(</button>
+      <button onclick="btnClick()">)</button>
+      <button onclick="btnClick()">%</button>
+      <button onclick="btnClick()">÷</button>
+      <button onclick="btnClick()">π</button>
+      <button onclick="btnClick()">7</button>
+      <button onclick="btnClick()">8</button>
+      <button onclick="btnClick()">9</button>
+      <button onclick="btnClick()">x</button>
+      <button onclick="btnClick()">1/x</button>
+      <button onclick="btnClick()">4</button>
+      <button onclick="btnClick()">5</button>
+      <button onclick="btnClick()">6</button>
+      <button onclick="btnClick()">-</button>
+      <button onclick="btnClick()">²√x</button>
+      <button onclick="btnClick()">1</button>
+      <button onclick="btnClick()">2</button>
+      <button onclick="btnClick()">3</button>
+      <button onclick="btnClick()">+</button>
+      <button onclick="btnClick()">xⁿ</button>
+      <button onclick="btnClick()">±</button>
+      <button onclick="btnClick()">0</button>
+      <button onclick="btnClick()">.</button>
+      <button onclick="btnClick()">=</button>
+    </div>
+  </div>
+  <a href="index.html"><button class="back">Back</button></a>
+  <script>
+    let num1 = "";
+    const operators = ['+', '-', 'x', '÷', '%', 'xⁿ']
+    opScreenNum = 0;
+    let res = 0;
+    let secondOp = false;
+
+    function btnClick() {
+      const btn = event.target.innerHTML;
+      calcIfs();
+    }
+
+    function calcIfs() {
+      const btn = event.target.innerHTML;
+      if (!isNaN(btn)) {
+        num1 += btn;
+        resScreen.innerHTML = num1;
+      }
+      else if (operators.includes(btn)) {
+        basicOp();
+      }
+      else if (btn == '=') {
+        equals();
+      }
+      else if (btn == 'π') {
+        num1 += Math.PI;
+        resScreen.innerHTML = num1;
+      }
+      else if (btn == 'e') {
+        num1 += Math.E;
+        resScreen.innerHTML = num1;
+      }
+      else if (btn == 'C') {
+        secondOp = false;
+        num1 = "";
+        opScreenNum = 0;
+        resScreen.innerHTML = "0";
+        opScreen.innerHTML = "";
+      }
+      else if (btn == 'CE') {
+        num1 = "";
+        resScreen.innerHTML = "0";
+      }
+      else if (btn == '±') {
+        if (resScreen.innerHTML > 0)
+          resScreen.innerHTML = 0 - resScreen.innerHTML;
+        else if (resScreen.innerHTML < 0)
+          resScreen.innerHTML = 0 - resScreen.innerHTML;
+      }
+      else if (btn == '.') {
+        (!resScreen.innerHTML.includes(btn)) && ((resScreen.innerHTML += btn), num1 += btn);
+      }
+      else {
+        singleOp();
+      }
+    }
+    function equals() {
+      if (opScreen.innerHTML.includes('+')) {
+        secondOp = false;
+        num1 = "";
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = opScreenNum + parseFloat(resScreen.innerHTML)
+      }
+      else if (opScreen.innerHTML.includes('-')) {
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = opScreenNum - parseFloat(resScreen.innerHTML)
+      }
+      else if (opScreen.innerHTML.includes('x')) {
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = opScreenNum * parseFloat(resScreen.innerHTML)
+      }
+      else if (opScreen.innerHTML.includes('÷')) {
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = opScreenNum / parseFloat(resScreen.innerHTML)
+      }
+      else if (opScreen.innerHTML.includes('%')) {
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = opScreenNum % parseFloat(resScreen.innerHTML)
+      }
+      else if (opScreen.innerHTML.includes('^')) {
+        opScreen.innerHTML += resScreen.innerHTML;
+        resScreen.innerHTML = Math.pow(opScreenNum, parseFloat(resScreen.innerHTML))
+      }
+    }
+    function basicOp() {
+      const btn = event.target.innerHTML;
+      switch (btn) {
+        case '+':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum += parseFloat(resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} + `;
+          resScreen.innerHTML = "";
+          break;
+        case '-':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum -= parseFloat(resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} - `;
+          resScreen.innerHTML = "";
+          break;
+        case 'x':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum *= parseFloat(resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} x `;
+          resScreen.innerHTML = "";
+          break;
+        case '÷':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum /= parseFloat(resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} ÷ `;
+          resScreen.innerHTML = "";
+          break;
+        case '%':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum %= parseFloat(resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} % `;
+          resScreen.innerHTML = "";
+          break;
+        case 'xⁿ':
+          if (!secondOp) {
+            opScreenNum += parseFloat(resScreen.innerHTML);
+            secondOp = true;
+          }
+          else {
+            opScreenNum = Math.pow(opScreenNum, resScreen.innerHTML)
+          }
+          num1 = "";
+          opScreen.innerHTML = `${opScreenNum} ^ `;
+          resScreen.innerHTML = "";
+          break;
+      }
+    }
+    function singleOp() {
+      const btn = event.target.innerHTML;
+      switch (btn) {
+        case 'x²':
+          opScreen.innerHTML = `${resScreen.innerHTML}²`;
+          resScreen.innerHTML = Math.pow(parseFloat(resScreen.innerHTML), 2);
+          break;
+        case '²√x':
+          opScreen.innerHTML = `√${resScreen.innerHTML}`;
+          resScreen.innerHTML = Math.sqrt(parseFloat(resScreen.innerHTML), 2);
+          break;
+        case '1/x':
+          opScreen.innerHTML = `1/${resScreen.innerHTML}`;
+          resScreen.innerHTML = 1 / resScreen.innerHTML;
+          break;
+        case 'log':
+          opScreen.innerHTML = `log(${resScreen.innerHTML})`;
+          resScreen.innerHTML = Math.log(resScreen.innerHTML);
+          break;
+      }
+      num1 = "";
+    }
+  </script>
+
 </body>
 
 </html>
