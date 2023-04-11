@@ -1,21 +1,30 @@
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background: #22272e;
-    height: 100dvh;
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #22272e;
 }
-h1{
+
+.container {
+    height: 100dvh;
+    width: 100dvw;
+
+}
+
+.head {
     color: whitesmoke;
     text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 1rem;
 }
+
 #text-area {
     width: 95%;
     height: 50%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #cbcbcb;
     background: #2f3640;
     border-radius: 1rem;
     resize: none;
@@ -27,19 +36,34 @@ h1{
     font-weight: bold;
 }
 
-#text-area::placeholder{
+#text-area::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
-.btns button {
+
+.topBtns button {
     padding: 10px 20px;
     background-color: #14b660;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 0.1rem;
+    margin: 0.2rem;
 }
-#save-selector{
+
+.saves,
+.loads {
+    display: flex;
+    align-items: center;
+}
+
+.saveLoad {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#save-selector {
     background: #22272e;
     color: #14b660;
     border: none;
@@ -47,17 +71,24 @@ h1{
     height: 1.5rem;
 }
 
-.btns{
+.topBtns {
     margin: 0.5rem;
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 }
-.btnsLeft{
+
+.btnsLeft {
+    width: 50%;
     display: flex;
 }
-.btnsLeft input[type=text]{
-    width: 50px;
-    height: 1.5rem;
+
+.btnsLeft input[type=text] {
+    width: 60px;
+    height: 2rem;
     outline: none;
     border: 1px solid black;
     border-bottom: 3px solid #14b660;
@@ -65,19 +96,62 @@ h1{
     color: whitesmoke;
 }
 
-.backBtn{
+.deleteBtn {
+    width: 40%;
     display: flex;
+    align-items: flex-end;
     justify-content: right;
-    
-    width: 100%;
+    /* flex-direction: column; */
 }
 
-.backBtn button{
+.deleteBtn button {
+    width: 7rem;
+    height: 3rem;
+}
+
+.backBtn {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.backBtn button {
     background: #e84118;
     color: whitesmoke;
-    height: 3rem;
+    height: 4rem;
     width: 7rem;
     border: none;
     border-radius: 1rem;
     margin-top: 10px;
+}
+
+.backBtn button:hover {
+    cursor: pointer;
+    background: #c93611;
+    transition: 0.4s;
+}
+
+.saveLoad button:hover {
+    background: #0c9f40;
+    transition: 0.4s;
+}
+
+@media only screen and (max-width:550px) {
+    .btnsLeft {
+        width: 100%;
+        align-items: center;
+    }
+
+    #new-btn {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .deleteBtn {
+        flex-direction: column;
+    }
+
+    .deleteBtn button {
+        width: 5rem;
+    }
 }

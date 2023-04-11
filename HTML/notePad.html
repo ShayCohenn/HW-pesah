@@ -11,26 +11,31 @@
 </head>
 
 <body>
-    <h1>Notepad</h1>
-    <div class="btns">
-        <div class="btnsLeft">
-            <button id="new-btn" style="background: rgb(0, 119, 255);">New</button>
-            <div class="saves">
-                <button id="save-btn">Save</button>
-                <input type="text" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';" id="save-name-input" placeholder="Enter a name for the save">
+    <div class="container">
+        <div class="head">Notepad</div>
+        <div class="topBtns">
+            <div class="btnsLeft">
+                <button id="new-btn" class="newBtn" style="background: rgb(0, 120, 255);width: 25%;">New</button>
+                <div class="saveLoad">
+                    <div class="saves">
+                        <button id="save-btn">Save</button>
+                        <input type="text" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';"
+                            id="save-name-input" placeholder="Enter a name for the save">
+                    </div>
+                    <div class="loads">
+                        <button id="load-btn">Load</button>
+                        <select id="save-selector"></select>
+                    </div>
+                </div>
             </div>
-            <div class="loads">
-                <button id="load-btn">Load</button>
-                <select id="save-selector"></select>
+            <div class="deleteBtn">
+                <button id="delete-btn" style="background: orangered;">Delete</button>
+                <button id="delete-all-btn" style="background: red;">Delete All</button>
             </div>
         </div>
-        <div class="deleteBtn">
-            <button id="delete-btn" style="background: orangered;">Delete</button>
-            <button id="delete-all-btn" style="background: red;">Delete All</button>
-        </div>
+        <textarea id="text-area" placeholder="Type Anything Except For '=' And '@'"></textarea>
+        <div class="backBtn"><a href="../index.html"><button>BACK</button></a></div>
     </div>
-    <textarea id="text-area" placeholder="Type Anything Except For '=' And '@'"></textarea>
-    <div class="backBtn"><a href="../index.html"><button>BACK</button></a></div>
 </body>
 
 </html>
