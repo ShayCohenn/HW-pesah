@@ -2,13 +2,18 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     background: #22272e;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 h1{
     color: whitesmoke;
+    text-align: center;
 }
 #text-area {
-    width: 98%;
-    height: 30rem;
+    width: 95%;
+    height: 50%;
     padding: 10px;
     border: 1px solid #ccc;
     background: #2f3640;
@@ -61,14 +66,18 @@ h1{
 }
 
 .backBtn{
+    display: flex;
+    justify-content: right;
+    
+    width: 100%;
+}
+
+.backBtn button{
     background: #e84118;
-    border: none;
+    color: whitesmoke;
     height: 3rem;
     width: 7rem;
+    border: none;
     border-radius: 1rem;
-    font-size: 1.2rem;
-    color: whitesmoke;
-    font-weight: bold;
-    position: absolute;
-    right:1rem ;
+    margin-top: 10px;
 }
