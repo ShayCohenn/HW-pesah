@@ -8,49 +8,33 @@ body {
 }
 
 .container {
-  height: 60%;
+  height: 70%;
   width: 32rem;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #2f3640;
   box-shadow: 0 0 5rem black;
-}
-
-.screen {
-  height: 35%;
-  padding-bottom: 1rem;
-  color: #e84118;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.resScreen,
-.opScreen {
-  display: flex;
-  align-items: center;
-  padding-right: 1rem;
-  width: 90%;
-  justify-content: right;
-  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .resScreen {
-  height: 60%;
+  height: 30%;
   width: 90%;
-  font-size: 3.5rem;
-}
-
-.opScreen {
-  height: 40%;
-  font-size: 1.5rem;
+  position: relative;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  display: flex;
+  color: #e84118;
+  font-size: 250%;
+  align-items: center;
+  justify-content: right;
+  overflow:hidden;
 }
 
 .calculator {
@@ -70,7 +54,7 @@ body {
   font-size: 18px;
   padding: 10px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   font-size: 1.3rem;
 }
 
@@ -89,7 +73,7 @@ body {
   bottom: 0;
   right: 0;
   margin: 1rem;
-  height: 5rem;
+  height: 7%;
   width: 7rem;
   border-radius: 1rem;
   border: none;
@@ -113,7 +97,7 @@ body {
   }
 
   .calculator {
-    width: 90%;
+    width: 95%;
     grid-template-columns: repeat(5, 1fr);
   }
 }
