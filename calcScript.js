@@ -5,6 +5,7 @@ let calcTxt = "";
 let decPressed = false;
 let btnTxt = "";
 let screenBtnTxt = "";
+let res = 0;
 const operators = ['+', '-', 'x', '÷', '%','xⁿ',''];
 
 function btnClick() {
@@ -74,8 +75,14 @@ function avdOp() {
   }
 }
 
+function ansBtn(){
+  calcTxt = res;
+  screenTxt = res;
+  resScreen.innerHTML = res;
+}
+
 function equal() {
-  let res = eval(calcTxt);
+  res = eval(calcTxt);
   opPressed = false;
   console.log(res);
   calcTxt = res.toString();

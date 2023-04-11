@@ -23,11 +23,10 @@ body {
 }
 
 .resScreen {
-  height: 30%;
+  height: 25%;
   width: 90%;
   position: relative;
   left: 50%;
-  top: 10%;
   transform: translate(-50%);
   display: flex;
   color: #e84118;
@@ -35,6 +34,20 @@ body {
   align-items: center;
   justify-content: right;
   overflow:hidden;
+}
+
+.ansBtn{
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  border: 1.5px solid black;
+  border-radius: 0.5rem;
+  outline: none;
+  left: 100%;
+  transform: translate(-120%);
+  background: transparent;
+  color: #e84118;
+  transition: all 0.5s ease-in-out;
 }
 
 .calculator {
@@ -50,20 +63,20 @@ body {
   background-color: #2f3640;
   color: #e84118;
   border: 1px solid black;
-  border-radius: 5px;
-  font-size: 18px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
   padding: 10px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   font-size: 1.3rem;
 }
 
-.calculator button:hover {
+.calculator button:hover, .ansBtn:hover{
   background-color: #e84118;
   color: #2f3640;
 }
 
-.calculator button:active {
+.calculator button:active, .ansBtn:active {
   background-color: #c93611;
   color: whitesmoke;
 }
