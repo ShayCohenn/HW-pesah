@@ -76,8 +76,8 @@ function avdOp() {
 }
 
 function ansBtn(){
-  calcTxt = res;
-  screenTxt = res;
+  calcTxt = res.toString();
+  screenTxt = res.toString();
   resScreen.innerHTML = res;
 }
 

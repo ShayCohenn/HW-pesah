@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/indexStyles.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="clock">00:00:00</div>
+        <div class="clock" id="clock">00:00:00</div>
         <div class="mainBtns">
             <a href="HTML/calc.html"><button>Calculator</button></a>
             <a href="HTML/notePad.html"><button>Notepad</button></a>
-           <a href="HTML/game.html"><button>Game</button></a>
+            <a href="HTML/game.html"><button>Game</button></a>
         </div>
         <div class="loginSignupBtns">
             <button>Login</button>
@@ -21,7 +23,16 @@
         </div>
     </div>
     <script>
-        
+        function updateClock() {
+            let date = new Date();
+            let hrs = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            clock.innerHTML = `${hrs}:${min}:${sec}`;
+        }
+        setInterval(updateClock,50);
     </script>
 </body>
+
 </html>
