@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background: #22272e;
+}
+h1{
+    color: whitesmoke;
+}
+#text-area {
+    width: 98%;
+    height: 30rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #2f3640;
+    border-radius: 1rem;
+    resize: none;
+    font-size: 18px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+#text-area::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+.btns button {
+    padding: 10px 20px;
+    background-color: #14b660;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.1rem;
+}
+#save-selector{
+    background: #22272e;
+    color: #14b660;
+    border: none;
+    outline: none;
+    height: 1.5rem;
+}
+
+.btns{
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.btnsLeft{
+    display: flex;
+}
+.btnsLeft input[type=text]{
+    width: 50px;
+    height: 1.5rem;
+    outline: none;
+    border: 1px solid black;
+    border-bottom: 3px solid #14b660;
+    background: transparent;
+    color: whitesmoke;
+}
+
+.backBtn{
+    background: #e84118;
+    border: none;
+    height: 3rem;
+    width: 7rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    font-weight: bold;
+    position: absolute;
+    right:1rem ;
+}

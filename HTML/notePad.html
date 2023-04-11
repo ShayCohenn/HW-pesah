@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTEPAD</title>
     <link rel="stylesheet" href="../CSS/notepadStyle.css">
+    <script src="../notePadScript.js"></script>
 </head>
+
 <body>
-    
+    <h1>Notepad</h1>
+    <div class="btns">
+        <div class="btnsLeft">
+            <button id="new-btn" style="background: rgb(0, 119, 255);">New</button>
+            <div class="saves">
+                <button id="save-btn">Save</button>
+                <input type="text" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';" id="save-name-input" placeholder="Enter a name for the save">
+            </div>
+            <div class="loads">
+                <button id="load-btn">Load</button>
+                <select id="save-selector"></select>
+            </div>
+        </div>
+        <div class="deleteBtn">
+            <button id="delete-btn" style="background: orangered;">Delete</button>
+            <button id="delete-all-btn" style="background: red;">Delete All</button>
+        </div>
+    </div>
+    <textarea id="text-area" placeholder="Type Anything Except For '=' And '@'"></textarea>
+    <a href="../index.html"><button class="backBtn">BACK</button></a>
 </body>
+
 </html>
