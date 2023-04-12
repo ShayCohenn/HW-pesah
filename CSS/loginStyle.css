@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background: #22272e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #2f3640;
+    color: whitesmoke;
+    box-shadow: 0 0 10rem rgb(0, 0, 0);
+    width: 25rem;
+    height: min-content;
+    padding: 20px;
+    border-radius: 1rem;
+}
+
+.backBtn {
+    background: #e84118;
+    border: none;
+    color: whitesmoke;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.3rem;
+}
+
+.backBtn:hover {
+    background: #c23613;
+    cursor: pointer;
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+}
