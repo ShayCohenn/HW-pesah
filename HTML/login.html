@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <h1 class="text-center">hello</h1>
-        <form class="needs-validation">
+        <form class="needs-validation" action="../index.html">
             <div class="form-group was-validated">
                 <label class="form-label" for="email">Email:</label>
                 <input class="form-control" type="email" id="email" required placeholder="@gmail.com">
@@ -37,26 +37,6 @@
     </div>
     <a href="../index.html"><button class="backBtn">Back</button></a>
     <script>
-        const loginBtn = document.getElementById('login-btn');
-        const form = document.querySelector('.needs-validation');
-
-        loginBtn.addEventListener('click', function (event) {
-            event.preventDefault(); // prevent default form submission
-
-            const emailInput = document.getElementById('email');
-            const passwordInput = document.getElementById('pw');
-
-            if (emailInput.value && passwordInput.value) {
-                window.location.href = '../index.html';
-            }
-            else {
-                alert('Please enter a valid email and password.');
-            }
-        });
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // prevent default form submission
-        })
     </script>
 </body>
 

@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background: #22272e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    position: relative;
+    background: #2f3640;
+    height: 40rem;
+    width: 40rem;
+}
+
+.ball{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius:100%;
+    border: 2px solid black;
+    background: #e84118;
+}
+
+.pong{
+    position: absolute;
+    height: 1rem;
+    width: 6rem;
+    background: wheat;
+    bottom: 0;
+}

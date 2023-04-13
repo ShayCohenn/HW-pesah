@@ -109,25 +109,23 @@
 }
 
 .backBtn {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-}
-
-.backBtn button {
     background: #e84118;
-    color: whitesmoke;
-    height: 4rem;
-    width: 7rem;
     border: none;
+    color: whitesmoke;
+    height: 3rem;
+    width: 6rem;
     border-radius: 1rem;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.3rem;
 }
 
-.backBtn button:hover {
+.backBtn:hover {
+    background: #c23613;
     cursor: pointer;
-    background: #c93611;
     transition: 0.4s;
+    transform: scale(1.1);
 }
 
 .saveLoad button:hover {

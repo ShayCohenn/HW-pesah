@@ -89,7 +89,7 @@ body {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px), (max-height: 1000px) {
     .container {
         width: 80%;
         height: 70%;
@@ -111,5 +111,28 @@ body {
         margin: 1rem;
         font-weight: bold;
         font-size: 1rem;
+    }
+}
+
+@media only screen and (max-height: 500px){
+    .container{
+        flex-direction: row;
+    }
+    .clock{
+        font-size: 2rem;
+    }
+    .mainBtns button {
+        height: 2rem;
+        width: 5rem;
+        font-size: 0.8rem;
+    }
+    .loginSignupBtns{
+        align-items: center;
+    }
+    .loginSignupBtns button {
+        height: 2rem;
+        width: 4rem;
+        margin: 1rem;
+        font-size: 0.8rem;
     }
 }
